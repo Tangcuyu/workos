@@ -5,11 +5,38 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Fonts */
+  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Andale Mono", "Ubuntu Mono", monospace;
+  --font-heading: var(--font-sans);
+
+  /* WorkOS Brand Colors */
+  --color-workos-purple: #6363F1;
+  --color-workos-purple-light: #6B7AFF;
+  --color-workos-teal: #23F0C3;
+  --color-workos-dark: #030527;
+  --color-workos-dark-2: #030628;
+  --color-workos-dark-3: #0F2149;
+  --color-workos-dark-4: #181D39;
+  --color-workos-dark-5: #13102F;
+  --color-workos-dark-6: #1A1736;
+  --color-workos-navy: #030422;
+
+  /* Text Colors */
+  --color-text-primary: #29363D;
+  --color-text-secondary: #656B8A;
+  --color-text-muted: #8F96BD;
+  --color-text-light: #C5CAE8;
+
+  /* Background Colors */
+  --color-bg-light: #F9F9FB;
+  --color-bg-white: #FFFFFF;
+  --color-bg-gray: #ECEDED;
+  --color-bg-border: #E8E8E8;
+
+  /* shadcn mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,72 +76,73 @@
 }
 
 :root {
+  /* Light mode (default) */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.278 0.022 237);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.278 0.022 237);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.278 0.022 237);
+  --primary: oklch(0.55 0.22 265);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --secondary-foreground: oklch(0.278 0.022 237);
+  --muted: oklch(0.97 0.005 237);
+  --muted-foreground: oklch(0.52 0.03 265);
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent-foreground: oklch(0.278 0.022 237);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.92 0.005 237);
+  --input: oklch(0.92 0.005 237);
+  --ring: oklch(0.55 0.22 265);
   --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
+  --chart-2: oklch(0.52 0.03 265);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0.5rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.55 0.22 265);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent-foreground: oklch(0.278 0.022 237);
+  --sidebar-border: oklch(0.92 0.005 237);
+  --sidebar-ring: oklch(0.55 0.22 265);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.07 0.03 265);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.1 0.03 265);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.1 0.03 265);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --primary: oklch(0.55 0.22 265);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.15 0.03 265);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --muted: oklch(0.15 0.03 265);
+  --muted-foreground: oklch(0.65 0.02 265);
+  --accent: oklch(0.15 0.03 265);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.55 0.22 265);
   --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
+  --chart-2: oklch(0.65 0.02 265);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: oklch(0.1 0.03 265);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.55 0.22 265);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: oklch(0.15 0.03 265);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.55 0.22 265);
 }
 
 @layer base {
@@ -127,4 +155,263 @@
   html {
     @apply font-sans;
   }
+}
+
+/* WorkOS Typography */
+@layer components {
+  .text-h1 {
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 84px;
+    letter-spacing: -5.6px;
+  }
+
+  .text-h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33.6px;
+    letter-spacing: -1.4px;
+  }
+
+  .text-h3 {
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 55.64px;
+    letter-spacing: -2.6px;
+  }
+
+  .text-body-large {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 30.4px;
+    letter-spacing: -0.19px;
+  }
+
+  .text-body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+  }
+
+  .text-small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .text-allcaps {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+}
+
+/* WorkOS Section Backgrounds */
+@layer components {
+  .section-light {
+    background-color: #FFFFFF;
+    color: #29363D;
+  }
+
+  .section-dark {
+    background-color: #030527;
+    color: #FFFFFF;
+  }
+
+  .section-gray {
+    background-color: #F9F9FB;
+    color: #29363D;
+  }
+}
+
+/* WorkOS Button Styles */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #6363F1;
+    color: #FFFFFF;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #4F4FE0;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: transparent;
+    color: #29363D;
+    border: 1px solid #E8E8E8;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #F9F9FB;
+    border-color: #D0D0D0;
+  }
+
+  .btn-dark-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-dark-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6363F1;
+    transition: color 0.2s ease;
+  }
+
+  .btn-link:hover {
+    color: #4F4FE0;
+  }
+}
+
+/* WorkOS Container */
+@layer components {
+  .container-workos {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* WorkOS Card Styles */
+@layer components {
+  .card-feature {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .card-feature:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-color: #D0D0D0;
+  }
+
+  .card-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .card-dark:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* WorkOS Navigation */
+@layer components {
+  .nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #29363D;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #6363F1;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .text-h1 {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -3.2px;
+  }
+
+  .text-h3 {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1.8px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid #6363F1;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Marquee animation for logo carousel */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
